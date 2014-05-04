@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6669BFD3-11B9-4760-BD33-63920DCAC721}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TestBed_VCL_Original\TestBed_VCL_Original.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestBed_VCL_Refactored\TestBed_VCL_Refactored.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestBed_FM_Desktop\TestBed_FM_Desktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestBed_FM_Mobile\TestBed_FM_Mobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestBed_PyramidSample\TestBed_PyramidSample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestBed_VCL_Original">
+        <MSBuild Projects="TestBed_VCL_Original\TestBed_VCL_Original.dproj"/>
+    </Target>
+    <Target Name="TestBed_VCL_Original:Clean">
+        <MSBuild Projects="TestBed_VCL_Original\TestBed_VCL_Original.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestBed_VCL_Original:Make">
+        <MSBuild Projects="TestBed_VCL_Original\TestBed_VCL_Original.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestBed_VCL_Refactored">
+        <MSBuild Projects="TestBed_VCL_Refactored\TestBed_VCL_Refactored.dproj"/>
+    </Target>
+    <Target Name="TestBed_VCL_Refactored:Clean">
+        <MSBuild Projects="TestBed_VCL_Refactored\TestBed_VCL_Refactored.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestBed_VCL_Refactored:Make">
+        <MSBuild Projects="TestBed_VCL_Refactored\TestBed_VCL_Refactored.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestBed_FM_Desktop">
+        <MSBuild Projects="TestBed_FM_Desktop\TestBed_FM_Desktop.dproj"/>
+    </Target>
+    <Target Name="TestBed_FM_Desktop:Clean">
+        <MSBuild Projects="TestBed_FM_Desktop\TestBed_FM_Desktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestBed_FM_Desktop:Make">
+        <MSBuild Projects="TestBed_FM_Desktop\TestBed_FM_Desktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestBed_FM_Mobile">
+        <MSBuild Projects="TestBed_FM_Mobile\TestBed_FM_Mobile.dproj"/>
+    </Target>
+    <Target Name="TestBed_FM_Mobile:Clean">
+        <MSBuild Projects="TestBed_FM_Mobile\TestBed_FM_Mobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestBed_FM_Mobile:Make">
+        <MSBuild Projects="TestBed_FM_Mobile\TestBed_FM_Mobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestBed_PyramidSample">
+        <MSBuild Projects="TestBed_PyramidSample\TestBed_PyramidSample.dproj"/>
+    </Target>
+    <Target Name="TestBed_PyramidSample:Clean">
+        <MSBuild Projects="TestBed_PyramidSample\TestBed_PyramidSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestBed_PyramidSample:Make">
+        <MSBuild Projects="TestBed_PyramidSample\TestBed_PyramidSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestBed_VCL_Original;TestBed_VCL_Refactored;TestBed_FM_Desktop;TestBed_FM_Mobile;TestBed_PyramidSample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestBed_VCL_Original:Clean;TestBed_VCL_Refactored:Clean;TestBed_FM_Desktop:Clean;TestBed_FM_Mobile:Clean;TestBed_PyramidSample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestBed_VCL_Original:Make;TestBed_VCL_Refactored:Make;TestBed_FM_Desktop:Make;TestBed_FM_Mobile:Make;TestBed_PyramidSample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

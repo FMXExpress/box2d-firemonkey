@@ -1,0 +1,78 @@
+object FormDBox2DSample: TFormDBox2DSample
+  Left = 0
+  Top = 0
+  Caption = 'DBox2D Sample'
+  ClientHeight = 670
+  ClientWidth = 829
+  WindowState = wsMaximized
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
+  OnResize = FormResize
+  OnShow = FormShow
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object LayoutButtons: TLayout
+    Align = Top
+    Height = 31.000000000000000000
+    Width = 829.000000000000000000
+    object btnPause: TButton
+      CanFocus = False
+      Height = 22.000000000000000000
+      Position.X = 86.000000000000000000
+      Position.Y = 4.000000000000000000
+      TabOrder = 0
+      Text = 'Pause'
+      Width = 75.000000000000000000
+      OnClick = btnPauseClick
+    end
+    object btnSingleStep: TButton
+      CanFocus = False
+      Height = 22.000000000000000000
+      Position.X = 168.000000000000000000
+      Position.Y = 4.000000000000000000
+      TabOrder = 1
+      Text = 'Single Step'
+      Width = 75.000000000000000000
+      OnClick = btnSingleStepClick
+    end
+    object btnReset: TButton
+      CanFocus = False
+      Height = 22.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      TabOrder = 2
+      Text = 'Reset'
+      Width = 75.000000000000000000
+      OnClick = btnResetClick
+    end
+    object btnLaunchBomb: TButton
+      CanFocus = False
+      Height = 22.000000000000000000
+      Position.X = 266.000000000000000000
+      Position.Y = 4.000000000000000000
+      TabOrder = 3
+      Text = 'Launch BOMB !!!'
+      Width = 179.000000000000000000
+      OnClick = btnLaunchBombClick
+    end
+  end
+  object pntbxDrawPanel: TPaintBox
+    Align = Client
+    Height = 639.000000000000000000
+    Width = 829.000000000000000000
+    OnMouseDown = pntbxDrawPanelMouseDown
+    OnMouseMove = pntbxDrawPanelMouseMove
+    OnMouseUp = pntbxDrawPanelMouseUp
+    OnMouseWheel = pntbxDrawPanelMouseWheel
+    OnPaint = pntbxDrawPanelPaint
+  end
+end

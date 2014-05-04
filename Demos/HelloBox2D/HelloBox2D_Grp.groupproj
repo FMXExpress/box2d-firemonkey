@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9B8E9272-3F22-4137-9D3A-BB194AE47428}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="HelloBox2D_VCLForms\HelloBox2D_VCLForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HelloBox2D_FMForms\HelloBox2D_FMForms.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HelloBox2D_Mobile\HelloBox2D_Mobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HelloBox2D_Console\HelloBox2D_Console.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="HelloBox2D_VCLForms">
+        <MSBuild Projects="HelloBox2D_VCLForms\HelloBox2D_VCLForms.dproj"/>
+    </Target>
+    <Target Name="HelloBox2D_VCLForms:Clean">
+        <MSBuild Projects="HelloBox2D_VCLForms\HelloBox2D_VCLForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HelloBox2D_VCLForms:Make">
+        <MSBuild Projects="HelloBox2D_VCLForms\HelloBox2D_VCLForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HelloBox2D_FMForms">
+        <MSBuild Projects="HelloBox2D_FMForms\HelloBox2D_FMForms.dproj"/>
+    </Target>
+    <Target Name="HelloBox2D_FMForms:Clean">
+        <MSBuild Projects="HelloBox2D_FMForms\HelloBox2D_FMForms.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HelloBox2D_FMForms:Make">
+        <MSBuild Projects="HelloBox2D_FMForms\HelloBox2D_FMForms.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HelloBox2D_Mobile">
+        <MSBuild Projects="HelloBox2D_Mobile\HelloBox2D_Mobile.dproj"/>
+    </Target>
+    <Target Name="HelloBox2D_Mobile:Clean">
+        <MSBuild Projects="HelloBox2D_Mobile\HelloBox2D_Mobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HelloBox2D_Mobile:Make">
+        <MSBuild Projects="HelloBox2D_Mobile\HelloBox2D_Mobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HelloBox2D_Console">
+        <MSBuild Projects="HelloBox2D_Console\HelloBox2D_Console.dproj"/>
+    </Target>
+    <Target Name="HelloBox2D_Console:Clean">
+        <MSBuild Projects="HelloBox2D_Console\HelloBox2D_Console.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HelloBox2D_Console:Make">
+        <MSBuild Projects="HelloBox2D_Console\HelloBox2D_Console.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="HelloBox2D_VCLForms;HelloBox2D_FMForms;HelloBox2D_Mobile;HelloBox2D_Console"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="HelloBox2D_VCLForms:Clean;HelloBox2D_FMForms:Clean;HelloBox2D_Mobile:Clean;HelloBox2D_Console:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="HelloBox2D_VCLForms:Make;HelloBox2D_FMForms:Make;HelloBox2D_Mobile:Make;HelloBox2D_Console:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,318 @@
+object FormPingPong: TFormPingPong
+  Left = 0
+  Top = 0
+  Caption = 'PingPong'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  DesignerMobile = True
+  DesignerWidth = 384
+  DesignerHeight = 592
+  DesignerDeviceName = 'Google Nexus 4'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object OpenDialog1: TOpenDialog
+    DefaultExt = 'map'
+    Left = 104
+    Top = 32
+  end
+  object pnlBottom: TPanel
+    Align = Bottom
+    Height = 47.000000000000000000
+    Position.Y = 520.000000000000000000
+    Visible = False
+    Width = 384.000000000000000000
+    TabOrder = 0
+    object clrBlockColor: TColorComboBox
+      Align = Left
+      DisableFocusEffect = False
+      Height = 32.000000000000000000
+      Items.Strings = (
+        'Aliceblue'
+        'Antiquewhite'
+        'Aqua'
+        'Aquamarine'
+        'Azure'
+        'Beige'
+        'Bisque'
+        'Black'
+        'Blanchedalmond'
+        'Blue'
+        'Blueviolet'
+        'Brown'
+        'Burlywood'
+        'Cadetblue'
+        'Chartreuse'
+        'Chocolate'
+        'Coral'
+        'Cornflowerblue'
+        'Cornsilk'
+        'Crimson'
+        'Aqua'
+        'Darkblue'
+        'Darkcyan'
+        'Darkgoldenrod'
+        'Darkgray'
+        'Darkgreen'
+        'Darkgray'
+        'Darkkhaki'
+        'Darkmagenta'
+        'Darkolivegreen'
+        'Darkorange'
+        'Darkorchid'
+        'Darkred'
+        'Darksalmon'
+        'Darkseagreen'
+        'Darkslateblue'
+        'Darkslategray'
+        'Darkslategray'
+        'Darkturquoise'
+        'Darkviolet'
+        'Deeppink'
+        'Deepskyblue'
+        'Dimgray'
+        'Dimgray'
+        'Dodgerblue'
+        'Firebrick'
+        'Floralwhite'
+        'Forestgreen'
+        'Fuchsia'
+        'Gainsboro'
+        'Ghostwhite'
+        'Gold'
+        'Goldenrod'
+        'Gray'
+        'Green'
+        'Greenyellow'
+        'Gray'
+        'Honeydew'
+        'Hotpink'
+        'Indianred'
+        'Indigo'
+        'Ivory'
+        'Khaki'
+        'Lavender'
+        'Lavenderblush'
+        'Lawngreen'
+        'Lemonchiffon'
+        'Lightblue'
+        'Lightcoral'
+        'Lightcyan'
+        'Lightgoldenrodyellow'
+        'Lightgray'
+        'Lightgreen'
+        'Lightgray'
+        'Lightpink'
+        'Lightsalmon'
+        'Lightseagreen'
+        'Lightskyblue'
+        'Lightslategray'
+        'Lightslategray'
+        'Lightsteelblue'
+        'Lightyellow'
+        'Lime'
+        'Limegreen'
+        'Linen'
+        'Fuchsia'
+        'Maroon'
+        'Mediumaquamarine'
+        'Mediumblue'
+        'Mediumorchid'
+        'Mediumpurple'
+        'Mediumseagreen'
+        'Mediumslateblue'
+        'Mediumspringgreen'
+        'Mediumturquoise'
+        'Mediumvioletred'
+        'Midnightblue'
+        'Mintcream'
+        'Mistyrose'
+        'Moccasin'
+        'Navajowhite'
+        'Navy'
+        'Oldlace'
+        'Olive'
+        'Olivedrab'
+        'Orange'
+        'Orangered'
+        'Orchid'
+        'Palegoldenrod'
+        'Palegreen'
+        'Paleturquoise'
+        'Palevioletred'
+        'Papayawhip'
+        'Peachpuff'
+        'Peru'
+        'Pink'
+        'Plum'
+        'Powderblue'
+        'Purple'
+        'Red'
+        'Rosybrown'
+        'Royalblue'
+        'Saddlebrown'
+        'Salmon'
+        'Sandybrown'
+        'Seagreen'
+        'Seashell'
+        'Sienna'
+        'Silver'
+        'Skyblue'
+        'Slateblue'
+        'Slategray'
+        'Slategray'
+        'Snow'
+        'Springgreen'
+        'Steelblue'
+        'Tan'
+        'Teal'
+        'Thistle'
+        'Tomato'
+        'Turquoise'
+        'Violet'
+        'Wheat'
+        'White'
+        'Whitesmoke'
+        'Yellow'
+        'Yellowgreen'
+        'Null')
+      ItemIndex = 147
+      DropDownKind = Custom
+      Position.Y = 8.000000000000000000
+      TabOrder = 0
+      Width = 95.000000000000000000
+      OnChange = clrBlockColorChange
+      Color = claNull
+    end
+    object cboBlockType: TComboBox
+      Align = Client
+      DisableFocusEffect = False
+      Height = 32.000000000000000000
+      Margins.Top = 8.000000000000000000
+      TabOrder = 1
+      Width = 109.000000000000000000
+      OnChange = cboBlockTypeChange
+      object TListBoxItem
+        Height = 19.000000000000000000
+        TabOrder = 0
+        Text = 'Unbreakable'
+        Width = 19.000000000000000000
+      end
+      object TListBoxItem
+        Height = 19.000000000000000000
+        TabOrder = 1
+        Text = 'Hit Once'
+        Width = 19.000000000000000000
+      end
+      object TListBoxItem
+        Height = 19.000000000000000000
+        TabOrder = 2
+        Text = 'Hit Twice'
+        Width = 19.000000000000000000
+      end
+      object TListBoxItem
+        Height = 19.000000000000000000
+        TabOrder = 3
+        Text = 'Hit Thrice'
+        Width = 19.000000000000000000
+      end
+    end
+    object btnSaveMap: TButton
+      Align = Right
+      Height = 47.000000000000000000
+      Position.X = 281.000000000000000000
+      TabOrder = 2
+      Text = 'Save Map'
+      Width = 103.000000000000000000
+      OnClick = btnSaveMapClick
+    end
+    object btnDeleteBlock: TButton
+      Align = Right
+      Height = 47.000000000000000000
+      Position.X = 204.000000000000000000
+      TabOrder = 3
+      Text = 'DEL'
+      Width = 77.000000000000000000
+      OnClick = btnDeleteBlockClick
+    end
+  end
+  object pntbxGame: TPaintBox
+    Align = Client
+    Height = 511.000000000000000000
+    Margins.Left = 4.000000000000000000
+    Margins.Top = 4.000000000000000000
+    Margins.Right = 4.000000000000000000
+    Margins.Bottom = 4.000000000000000000
+    Width = 376.000000000000000000
+    OnMouseDown = pntbxGameMouseDown
+    OnPaint = pntbxGamePaint
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = 'map'
+    Filter = '*.map'
+    Left = 26
+    Top = 34
+  end
+  object ToolBar1: TToolBar
+    Height = 48.000000000000000000
+    TabOrder = 2
+    Width = 384.000000000000000000
+    object Label1: TLabel
+      Align = Contents
+      Height = 48.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = 'PingPong'
+      Width = 384.000000000000000000
+    end
+    object btnNewGame: TButton
+      Align = Left
+      Height = 48.000000000000000000
+      StyleLookup = 'refreshtoolbutton'
+      TabOrder = 0
+      Text = 'New Game'
+      Width = 48.000000000000000000
+      OnClick = btnNewGameClick
+    end
+    object btnLoadMap: TButton
+      Align = Left
+      Height = 48.000000000000000000
+      Position.X = 48.000000000000000000
+      StyleLookup = 'organizetoolbutton'
+      TabOrder = 1
+      Text = 'Load Map'
+      Width = 48.000000000000000000
+      OnClick = btnLoadMapClick
+    end
+    object btnPauseResume: TButton
+      Align = Right
+      Height = 48.000000000000000000
+      Position.X = 336.000000000000000000
+      StyleLookup = 'pausetoolbutton'
+      TabOrder = 2
+      Text = 'Pause'
+      Width = 48.000000000000000000
+      OnClick = btnPauseResumeClick
+    end
+    object EditBTN: TButton
+      Align = Right
+      Height = 48.000000000000000000
+      Position.X = 288.000000000000000000
+      StyleLookup = 'composetoolbutton'
+      TabOrder = 4
+      Text = 'Edit'
+      Width = 48.000000000000000000
+      OnClick = EditBTNClick
+    end
+  end
+  object InitTimer: TTimer
+    Enabled = False
+    OnTimer = InitTimerTimer
+    Left = 116
+    Top = 284
+  end
+end

@@ -1,0 +1,23 @@
+object FormDump: TFormDump
+  Left = 0
+  Top = 0
+  Caption = 'Delphi DBox2D TestBed - Dump'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop, dkiPhone, dkiPad]
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object MemoDump: TMemo
+    Touch.InteractiveGestures = [igPan, igLongTap, igDoubleTap]
+    Align = alClient
+    Height = 480.000000000000000000
+    TabOrder = 0
+    Width = 640.000000000000000000
+  end
+end

@@ -1,0 +1,38 @@
+object FormDump: TFormDump
+  Left = 0
+  Top = 0
+  Caption = 'Form Dump'
+  ClientHeight = 524
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop]
+  DesignerMobile = True
+  DesignerWidth = 384
+  DesignerHeight = 524
+  DesignerDeviceName = 'Google Nexus 4'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object MemoDump: TMemo
+    Touch.InteractiveGestures = [igPan, igLongTap, igDoubleTap]
+    Align = alClient
+    Height = 476.000000000000000000
+    TabOrder = 0
+    Width = 384.000000000000000000
+  end
+  object ToolBar1: TToolBar
+    Height = 48.000000000000000000
+    TabOrder = 1
+    Width = 384.000000000000000000
+    object BackBTN: TButton
+      Align = alLeft
+      Height = 48.000000000000000000
+      StyleLookup = 'priortoolbutton'
+      TabOrder = 0
+      Text = 'Back'
+      Trimming = ttCharacter
+      Width = 48.000000000000000000
+      OnClick = BackBTNClick
+    end
+  end
+end

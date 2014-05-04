@@ -1,0 +1,26 @@
+object FormFMPhysicsDebug: TFormFMPhysicsDebug
+  Left = 0
+  Top = 0
+  Caption = 'Delphi Box2D FireMonkey "Simple" debug demo'
+  ClientHeight = 430
+  ClientWidth = 519
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object ListBox1: TListBox
+    Align = Client
+    Height = 430.000000000000000000
+    TabOrder = 0
+    Width = 519.000000000000000000
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+  end
+end

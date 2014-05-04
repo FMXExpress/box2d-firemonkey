@@ -1,0 +1,47 @@
+object Form28: TForm28
+  Left = 0
+  Top = 0
+  Caption = 'Form28'
+  ClientHeight = 460
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMobile = True
+  DesignerWidth = 320
+  DesignerHeight = 480
+  DesignerDeviceName = 'iPhone'
+  DesignerOrientation = 0
+  DesignerOSVersion = '7'
+  object ToolBar1: TToolBar
+    Height = 44.000000000000000000
+    TabOrder = 0
+    Width = 320.000000000000000000
+    object Label1: TLabel
+      Height = 38.000000000000000000
+      Position.X = 92.000000000000000000
+      Position.Y = 2.000000000000000000
+      StyleLookup = 'toollabel'
+      Text = 'Delphi Box2D Test'
+      Width = 218.000000000000000000
+    end
+    object btnRun: TButton
+      Height = 31.000000000000000000
+      Position.X = 6.000000000000000000
+      Position.Y = 6.000000000000000000
+      TabOrder = 1
+      Text = 'Run'
+      Width = 73.000000000000000000
+      OnClick = btnRunClick
+    end
+  end
+  object ListBox1: TListBox
+    Align = Client
+    Height = 416.000000000000000000
+    TabOrder = 1
+    Width = 320.000000000000000000
+    DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+  end
+end

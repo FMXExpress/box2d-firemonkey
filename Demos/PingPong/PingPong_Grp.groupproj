@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{585C4A66-E27F-43FB-98F7-315E33D7DE33}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PingPong_VCL\b2PingPong_VCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PingPong_FMDesktop\b2PingPong_FMDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PingPong_Mobile\b2PingPong_Mobile.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="b2PingPong_VCL">
+        <MSBuild Projects="PingPong_VCL\b2PingPong_VCL.dproj"/>
+    </Target>
+    <Target Name="b2PingPong_VCL:Clean">
+        <MSBuild Projects="PingPong_VCL\b2PingPong_VCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="b2PingPong_VCL:Make">
+        <MSBuild Projects="PingPong_VCL\b2PingPong_VCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="b2PingPong_FMDesktop">
+        <MSBuild Projects="PingPong_FMDesktop\b2PingPong_FMDesktop.dproj"/>
+    </Target>
+    <Target Name="b2PingPong_FMDesktop:Clean">
+        <MSBuild Projects="PingPong_FMDesktop\b2PingPong_FMDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="b2PingPong_FMDesktop:Make">
+        <MSBuild Projects="PingPong_FMDesktop\b2PingPong_FMDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="b2PingPong_Mobile">
+        <MSBuild Projects="PingPong_Mobile\b2PingPong_Mobile.dproj"/>
+    </Target>
+    <Target Name="b2PingPong_Mobile:Clean">
+        <MSBuild Projects="PingPong_Mobile\b2PingPong_Mobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="b2PingPong_Mobile:Make">
+        <MSBuild Projects="PingPong_Mobile\b2PingPong_Mobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="b2PingPong_VCL;b2PingPong_FMDesktop;b2PingPong_Mobile"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="b2PingPong_VCL:Clean;b2PingPong_FMDesktop:Clean;b2PingPong_Mobile:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="b2PingPong_VCL:Make;b2PingPong_FMDesktop:Make;b2PingPong_Mobile:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

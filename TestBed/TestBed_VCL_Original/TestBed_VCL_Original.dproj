@@ -1,0 +1,162 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6956FD78-832D-44EA-833D-B02F63712261}</ProjectGuid>
+        <MainSource>TestBed_VCL_Original.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>15.4</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_S>false</DCC_S>
+        <SanitizedProjectName>TestBed_VCL_Original</SanitizedProjectName>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="UMain.pas">
+            <Form>frmMain</Form>
+        </DCCReference>
+        <DCCReference Include="Tests\UPolyShapes.pas"/>
+        <DCCReference Include="Tests\UPrismatic.pas"/>
+        <DCCReference Include="Tests\UPulleys.pas"/>
+        <DCCReference Include="Tests\UPyramid.pas"/>
+        <DCCReference Include="Tests\URestitution.pas"/>
+        <DCCReference Include="Tests\USensorTest.pas"/>
+        <DCCReference Include="Tests\UShapeEditing.pas"/>
+        <DCCReference Include="Tests\USliderCrank.pas"/>
+        <DCCReference Include="Tests\USphereStack.pas"/>
+        <DCCReference Include="Tests\UTheoJansen.pas"/>
+        <DCCReference Include="Tests\UTimeOfImpact.pas"/>
+        <DCCReference Include="Tests\UVaryingFriction.pas"/>
+        <DCCReference Include="Tests\UVaryingRestitution.pas"/>
+        <DCCReference Include="Tests\UVerticalStack.pas"/>
+        <DCCReference Include="Tests\UWeb.pas"/>
+        <DCCReference Include="Tests\UApplyForce.pas"/>
+        <DCCReference Include="Tests\UBodyTypes.pas"/>
+        <DCCReference Include="Tests\UBreakable.pas"/>
+        <DCCReference Include="Tests\UBridge.pas"/>
+        <DCCReference Include="Tests\UCantilever.pas"/>
+        <DCCReference Include="Tests\UChain.pas"/>
+        <DCCReference Include="Tests\UCharacterCollision.pas"/>
+        <DCCReference Include="Tests\UCollisionFiltering.pas"/>
+        <DCCReference Include="Tests\UCollisionProcessing.pas"/>
+        <DCCReference Include="Tests\UCompoundShapes.pas"/>
+        <DCCReference Include="Tests\UConfined.pas"/>
+        <DCCReference Include="Tests\UContinuousTest.pas"/>
+        <DCCReference Include="Tests\UDistanceTest.pas"/>
+        <DCCReference Include="Tests\UDominos.pas"/>
+        <DCCReference Include="Tests\UDynamicTreeTest.pas"/>
+        <DCCReference Include="Tests\UEdgeShapes.pas"/>
+        <DCCReference Include="Tests\UGears.pas"/>
+        <DCCReference Include="Tests\UMotorsAndLimits.pas"/>
+        <DCCReference Include="Tests\UOneSidedPlatform.pas"/>
+        <DCCReference Include="Tests\UPolyCollision.pas"/>
+        <DCCReference Include="Tests\URayCast.pas"/>
+        <DCCReference Include="Tests\UBuoyancyController.pas"/>
+        <DCCReference Include="Tests\UGraviation.pas"/>
+        <DCCReference Include="Tests\UTerrainBox.pas"/>
+        <DCCReference Include="Tests\URopeInWind.pas"/>
+        <DCCReference Include="Tests\UExplosion.pas"/>
+        <DCCReference Include="..\..\OpenGL Canvas\UOpenGLCanvas.pas"/>
+        <DCCReference Include="..\..\Physics2D\MSTimer.pas"/>
+        <DCCReference Include="..\..\Physics2D\UPhysics2D.pas"/>
+        <DCCReference Include="..\..\Physics2D\UPhysics2DControllers.pas"/>
+        <DCCReference Include="..\..\Physics2D\UPhysics2DHelper.pas"/>
+        <DCCReference Include="..\..\Physics2D\UPhysics2DPolygonTool.pas"/>
+        <DCCReference Include="..\..\Physics2D\UPhysics2DTypes.pas"/>
+        <DCCReference Include="Tests\UTiles.pas"/>
+        <DCCReference Include="Tests\UEdgeTest.pas"/>
+        <DCCReference Include="Tests\UBulletTest.pas"/>
+        <DCCReference Include="Tests\UPinBall.pas"/>
+        <DCCReference Include="Tests\URevolute.pas"/>
+        <DCCReference Include="Tests\URope.pas"/>
+        <DCCReference Include="Tests\UCar.pas"/>
+        <DCCReference Include="Tests\URopeJoint.pas"/>
+        <DCCReference Include="Tests\UWheelJoint.pas"/>
+        <DCCReference Include="Tests\UAddPair.pas"/>
+        <DCCReference Include="UDump.pas">
+            <Form>frmDump</Form>
+        </DCCReference>
+        <DCCReference Include="Tests\UTumbler.pas"/>
+        <DCCReference Include="Tests\UConvexHull.pas"/>
+        <DCCReference Include="Tests\UConveyorBelt.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">TestBed_VCL_Original.dpr</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

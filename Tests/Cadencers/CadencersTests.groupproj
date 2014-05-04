@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1F575B12-7345-42FA-9CC2-6C058D6692CC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="XCadencer\XCadencerTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MSTimer\MSTimerTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="XCadencerTest">
+        <MSBuild Projects="XCadencer\XCadencerTest.dproj"/>
+    </Target>
+    <Target Name="XCadencerTest:Clean">
+        <MSBuild Projects="XCadencer\XCadencerTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="XCadencerTest:Make">
+        <MSBuild Projects="XCadencer\XCadencerTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MSTimerTest">
+        <MSBuild Projects="MSTimer\MSTimerTest.dproj"/>
+    </Target>
+    <Target Name="MSTimerTest:Clean">
+        <MSBuild Projects="MSTimer\MSTimerTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MSTimerTest:Make">
+        <MSBuild Projects="MSTimer\MSTimerTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="XCadencerTest;MSTimerTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="XCadencerTest:Clean;MSTimerTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="XCadencerTest:Make;MSTimerTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

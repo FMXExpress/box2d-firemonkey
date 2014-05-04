@@ -1,0 +1,508 @@
+object FormDBox2DTestBedM: TFormDBox2DTestBedM
+  Left = 0
+  Top = 0
+  Caption = 'TestBed'
+  ClientHeight = 567
+  ClientWidth = 384
+  Quality = HighQuality
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnMouseWheel = FormMouseWheel
+  OnResize = FormResize
+  OnShow = FormShow
+  DesignerMobile = True
+  DesignerWidth = 384
+  DesignerHeight = 592
+  DesignerDeviceName = 'Google Nexus 4'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object ToolBar1: TToolBar
+    Height = 48.000000000000000000
+    TabOrder = 0
+    Width = 384.000000000000000000
+    object Label1: TLabel
+      Align = Contents
+      Height = 48.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = 'TestBed'
+      Width = 384.000000000000000000
+    end
+    object BackBTN: TButton
+      Align = Left
+      Height = 48.000000000000000000
+      StyleLookup = 'priortoolbutton'
+      TabOrder = 0
+      Text = 'Back'
+      Visible = False
+      Width = 48.000000000000000000
+      OnClick = BackBTNClick
+    end
+    object btnPause: TButton
+      Align = Right
+      Height = 48.000000000000000000
+      Position.X = 288.000000000000000000
+      StyleLookup = 'stoptoolbutton'
+      TabOrder = 2
+      Text = 'Pause'
+      Width = 48.000000000000000000
+      OnClick = btnPauseClick
+    end
+    object btnSingleStep: TButton
+      Align = Right
+      Height = 48.000000000000000000
+      Position.X = 336.000000000000000000
+      StyleLookup = 'arrowrighttoolbutton'
+      TabOrder = 3
+      Text = 'Single Step'
+      Width = 48.000000000000000000
+      OnClick = btnSingleStepClick
+    end
+    object btnDumpWorld: TButton
+      Align = Left
+      Height = 48.000000000000000000
+      StyleLookup = 'cameratoolbutton'
+      TabOrder = 4
+      Text = 'Dump World'
+      Width = 48.000000000000000000
+      OnClick = btnDumpWorldClick
+    end
+    object btnLaunchBomb: TButton
+      Align = Right
+      Height = 48.000000000000000000
+      Position.X = 240.000000000000000000
+      StyleLookup = 'bookmarkstoolbutton'
+      TabOrder = 5
+      Text = 'Pause'
+      Width = 48.000000000000000000
+      OnClick = btnLaunchBombClick
+    end
+    object btnReset: TButton
+      Align = Left
+      Height = 48.000000000000000000
+      Position.X = 48.000000000000000000
+      StyleLookup = 'refreshtoolbutton'
+      TabOrder = 6
+      Text = 'Reset'
+      Width = 48.000000000000000000
+      OnClick = btnResetClick
+    end
+  end
+  object PanelClient: TPanel
+    Align = Client
+    DesignVisible = False
+    Height = 519.000000000000000000
+    Visible = False
+    Width = 384.000000000000000000
+    TabOrder = 1
+    object pntbxDrawPanel: TPaintBox
+      Touch.GestureManager = GestureManager1
+      OnGesture = pntbxDrawPanelGesture
+      Align = Client
+      Height = 519.000000000000000000
+      Width = 384.000000000000000000
+      OnMouseDown = pntbxDrawPanelMouseDown
+      OnMouseMove = pntbxDrawPanelMouseMove
+      OnMouseUp = pntbxDrawPanelMouseUp
+      OnPaint = pntbxDrawPanelPaint
+    end
+  end
+  object TabControl: TTabControl
+    Align = Client
+    FullSize = True
+    Height = 519.000000000000000000
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 2
+    TabPosition = Bottom
+    Width = 384.000000000000000000
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 49.000000000000000000
+      IsSelected = True
+      TabOrder = 0
+      Text = 'Tests'
+      Width = 96.000000000000000000
+      object listTestEntries: TListBox
+        Touch.GestureManager = GestureManager1
+        Touch.InteractiveGestures = [Zoom]
+        Align = Client
+        Height = 450.000000000000000000
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 0
+        Width = 382.000000000000000000
+        CanFocus = False
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        GroupingKind = Grouped
+        OnChange = listTestEntriesChange
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 49.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Visibility'
+      Width = 96.000000000000000000
+      object LayoutVisibilityOptions: TLayout
+        Align = Client
+        Height = 470.000000000000000000
+        Width = 384.000000000000000000
+        TabOrder = 0
+        object chkKeyInfo: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 318.000000000000000000
+          TabOrder = 0
+          Text = 'Key Information'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkStats: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 286.000000000000000000
+          TabOrder = 1
+          Text = 'Statistics'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkCOMs: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 254.000000000000000000
+          TabOrder = 2
+          Text = 'Centre of Masses'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkFrictionImpulse: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 222.000000000000000000
+          TabOrder = 3
+          Text = 'Friction Impulse'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkContactImpulse: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 190.000000000000000000
+          TabOrder = 4
+          Text = 'Contact Impulse'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkContactNormals: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 158.000000000000000000
+          TabOrder = 5
+          Text = 'Contact Normals'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkContactPoints: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 126.000000000000000000
+          TabOrder = 6
+          Text = 'Contact Points'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkPairs: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 94.000000000000000000
+          TabOrder = 7
+          Text = 'Pairs'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkAABBs: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 62.000000000000000000
+          TabOrder = 8
+          Text = 'AABBs'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkShapes: TCheckBox
+          Align = Top
+          Height = 25.000000000000000000
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          TabOrder = 9
+          Text = 'Shapes'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkJoints: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 30.000000000000000000
+          TabOrder = 10
+          Text = 'Joints'
+          Width = 374.000000000000000000
+          OnChange = VisibilityOptionsChanged
+        end
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 49.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Options'
+      Width = 96.000000000000000000
+      object LayoutSimulationOptions: TLayout
+        Align = Client
+        Height = 470.000000000000000000
+        Width = 384.000000000000000000
+        TabOrder = 0
+        object chkEnableSleep: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 30.000000000000000000
+          TabOrder = 0
+          Text = 'Enable Sleep'
+          Width = 374.000000000000000000
+          OnChange = SimulationOptionsChanged
+        end
+        object chkSubStepping: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 126.000000000000000000
+          TabOrder = 1
+          Text = 'Sub-Stepping'
+          Width = 374.000000000000000000
+          OnChange = SimulationOptionsChanged
+        end
+        object chkWarmStarting: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 62.000000000000000000
+          TabOrder = 2
+          Text = 'Warm Starting'
+          Width = 374.000000000000000000
+          OnChange = SimulationOptionsChanged
+        end
+        object chkContinuousPhysics: TCheckBox
+          Align = Top
+          Height = 27.000000000000000000
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 94.000000000000000000
+          TabOrder = 3
+          Text = 'Continuous Physics'
+          Width = 374.000000000000000000
+          OnChange = SimulationOptionsChanged
+        end
+        object lblSimulationOptions: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, FontColor]
+          Height = 25.000000000000000000
+          Margins.Left = 4.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 4.000000000000000000
+          TextSettings.Font.Style = [fsBold]
+          Text = 'Simulation Options'
+          Width = 380.000000000000000000
+        end
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      Height = 49.000000000000000000
+      IsSelected = False
+      TabOrder = 0
+      Text = 'Modes'
+      Width = 96.000000000000000000
+      object grpbxMode: TGroupBox
+        Align = Top
+        Height = 70.000000000000000000
+        Margins.Left = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Text = ' Mode '
+        Width = 380.000000000000000000
+        TabOrder = 0
+        object rdoRealTime: TRadioButton
+          Align = Top
+          GroupName = 'GroupMode'
+          Height = 25.000000000000000000
+          Margins.Left = 8.000000000000000000
+          Margins.Top = 16.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 8.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 0
+          Text = 'Real Time'
+          Width = 370.000000000000000000
+          OnChange = ModeOptionsChanged
+        end
+        object rdoFixedStep: TRadioButton
+          Align = Top
+          GroupName = 'GroupMode'
+          Height = 24.000000000000000000
+          IsChecked = True
+          Margins.Left = 8.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 8.000000000000000000
+          Position.Y = 41.000000000000000000
+          TabOrder = 1
+          Text = 'Fixed Step (1/60s)'
+          Width = 370.000000000000000000
+          OnChange = ModeOptionsChanged
+        end
+      end
+      object grpbxGravity: TGroupBox
+        Align = Top
+        Height = 70.000000000000000000
+        Margins.Left = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Position.Y = 70.000000000000000000
+        Text = ' Gravity '
+        Width = 380.000000000000000000
+        TabOrder = 1
+        object editGravityX: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 24.000000000000000000
+          Position.Y = 26.000000000000000000
+          Width = 81.000000000000000000
+          Height = 32.000000000000000000
+          object lblGravityX: TLabel
+            Height = 17.000000000000000000
+            Position.X = -24.000000000000000000
+            Position.Y = 3.000000000000000000
+            TextSettings.HorzAlign = Trailing
+            Text = 'X'
+            Width = 21.000000000000000000
+          end
+        end
+        object editGravityY: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 120.000000000000000000
+          Position.Y = 26.000000000000000000
+          Width = 89.000000000000000000
+          Height = 32.000000000000000000
+          object lblGravityY: TLabel
+            Height = 17.000000000000000000
+            Position.X = -24.000000000000000000
+            Position.Y = 3.000000000000000000
+            TextSettings.HorzAlign = Trailing
+            Text = 'Y'
+            Width = 21.000000000000000000
+          end
+        end
+        object btnConfirmGravity: TButton
+          Align = Right
+          Height = 45.000000000000000000
+          Margins.Top = 15.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Position.X = 280.000000000000000000
+          Position.Y = 15.000000000000000000
+          TabOrder = 2
+          Text = 'Confirm'
+          Width = 90.000000000000000000
+          OnClick = btnConfirmGravityClick
+        end
+      end
+      object chkAntialiasing: TCheckBox
+        Align = Top
+        Height = 49.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 140.000000000000000000
+        TabOrder = 2
+        Text = 'Antialiasing'
+        Width = 372.000000000000000000
+        OnClick = chkAntialiasingClick
+      end
+      object LayoutButtons: TLayout
+        Align = Top
+        Height = 86.000000000000000000
+        Position.Y = 191.000000000000000000
+        Width = 384.000000000000000000
+        TabOrder = 3
+      end
+    end
+  end
+  object GestureManager1: TGestureManager
+    Left = 194
+    Top = 352
+  end
+end
